@@ -13,10 +13,8 @@ void draw()
   for (int i = 0; i < path.positions.size(); i++)
   {
     Position position = (Position) path.positions.get(i);
-    float longitude = abs(position.longitude);
-    float latitude = abs(position.latitude);
-    float x = map(latitude, abs(path.minLatitude), abs(path.maxLatitude), 0, width);
-    float y = map(longitude, abs(path.minLongitude), abs(path.maxLongitude), 0, height);
+    float x = map(abs(position.latitude), abs(path.minLatitude), abs(path.maxLatitude), 0, width);
+    float y = map(abs(position.longitude), abs(path.minLongitude), abs(path.maxLongitude), 0, height);
     point(x, y);
   }
 }
