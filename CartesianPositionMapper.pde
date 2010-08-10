@@ -1,26 +1,32 @@
+// TBD: This needs to be adjusted to account for negative GPS coordinates.
+
 class CartesianPositionMapper
 {
-  int width, height;
-  Path path;
-  int borderSize;
+  int width, height, borderSize;
+  float minLatitude, maxLatitude, minLongitude, maxLongitude;
   
-  CartesianPositionMapper(int newWidth, int newHeight, Path newPath, int newBorderSize)
+  CartesianPositionMapper(int newWidth, int newHeight, int newBorderSize)
   {
     width = newWidth;
     height = newHeight;
-    path = newPath;
     borderSize = newBorderSize;
   }
   
-  int getX(int index)
+  void setBoundaries(float newMinLatitude, float newMaxLatitude, float newMinLongitude, float newMaxLongitude)
   {
-    Position position = (Position) path.positions.get(index);
-    return (int) map(abs(position.latitude), abs(path.minLatitude), abs(path.maxLatitude), borderSize, width - borderSize);
+    minLatitude = newMinLatitude;
+    maxLatitude = newMaxLatitude;
+    minLongitude = newMinLongitude;
+    maxLongitude = newMaxLongitude;
   }
   
-  int getY(int index)
+  int getX(float longitude)
   {
-    Position position = (Position) path.positions.get(index);
-    return (int) map(abs(position.longitude), abs(path.minLongitude), abs(path.maxLongitude), borderSize, height - borderSize);
+    return (int) map(abs(longitude), abs(minLongitude), abs(maxLongitude), borderSize, width - borderSize);
+  }
+  
+  int getY(float latitude)
+  {
+    return (int) map(abs(latitude), abs(minLatitude), abs(maxLatitude), borderSize, height - borderSize);
   }
 }

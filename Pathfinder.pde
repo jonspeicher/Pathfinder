@@ -1,20 +1,21 @@
+import processing.opengl.*;
+
 PathBuilder builder;
 Path path;
-CartesianPositionMapper mapper;
+PathRenderer renderer;
+
+boolean drawn = false;
 
 void setup()
 {
-  size(640, 480);
+  size(640, 480, OPENGL);
   builder = new PathBuilder();
+  renderer = new PathRenderer(width, height);
   path = builder.newPathFromCsv("balloon2-path-data.csv");
-  mapper = new CartesianPositionMapper(width, height, path, 20);
 }
 
 void draw()
 {
-  for (int i = 0; i < path.positions.size(); i++)
-  {
-    point(mapper.getX(i), mapper.getY(i));
-  }
+  renderer.render(path);
 }
 
