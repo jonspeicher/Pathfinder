@@ -1,20 +1,20 @@
-BalloonPathBuilder builder;
-BalloonPath path;
+PathBuilder builder;
+Path path;
 
 void setup()
 {
-  builder = new BalloonPathBuilder();
+  builder = new PathBuilder();
   path = builder.newPathFromCsv("balloon2-path-data.csv");
   size(640, 480);
 }
 
 void draw()
 {
-  for (int i = 0; i < path.points.size(); i++)
+  for (int i = 0; i < path.positions.size(); i++)
   {
-    BalloonPoint p = (BalloonPoint) path.points.get(i);
-    float longitude = abs(p.longitude);
-    float latitude = abs(p.latitude);
+    Position position = (Position) path.positions.get(i);
+    float longitude = abs(position.longitude);
+    float latitude = abs(position.latitude);
     float x = map(latitude, abs(path.minLatitude), abs(path.maxLatitude), 0, width);
     float y = map(longitude, abs(path.minLongitude), abs(path.maxLongitude), 0, height);
     point(x, y);

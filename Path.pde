@@ -1,19 +1,19 @@
-class BalloonPath
+class Path
 {    
-  ArrayList points;
+  ArrayList positions;
   float minLatitude, maxLatitude;
   float minLongitude, maxLongitude;
   
-  BalloonPath()
+  Path()
   {
-    points = new ArrayList();
+    positions = new ArrayList();
     minLatitude = minLongitude = 180;
     maxLatitude = maxLongitude = -180;
   }
   
-  void addPoint(String time, float latitude, float longitude, float altitude)
+  void addPosition(String time, float latitude, float longitude, float altitude)
   {
-    points.add(new BalloonPoint(time, latitude, longitude, altitude));
+    positions.add(new Position(time, latitude, longitude, altitude));
     minLatitude = min(minLatitude, latitude);
     maxLatitude = max(maxLatitude, latitude);
     minLongitude = min(minLongitude, longitude);
