@@ -4,7 +4,7 @@ class PathRenderer
   
   PathRenderer(int width, int height)
   {
-    mapper = new CartesianPositionMapper(width, height, 50); // TBD: This border is definitely a function of maxAltitude
+    mapper = new CartesianPositionMapper(width, height, 100); // TBD: This border is definitely a function of many things
   }
   
   void render(Path path)

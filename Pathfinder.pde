@@ -4,8 +4,6 @@ PathBuilder builder;
 Path path;
 PathRenderer renderer;
 
-boolean drawn = false;
-
 void setup()
 {
   size(640, 480, OPENGL);
@@ -19,8 +17,12 @@ void setup()
 
 void draw()
 {
-  background(0);
+  background(255);
   lights();
+  rotateX(0.5);
+  rotateY(0.1);
+  rotateZ(0.1);
+  
   renderer.render(path);
 }
 
