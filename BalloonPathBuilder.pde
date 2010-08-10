@@ -11,7 +11,7 @@ class BalloonPathBuilder
     {
       String [] temp = new String[FIELD_COUNT];
       temp = split(lines[i], ',');
-      path.addPoint(temp[0], temp[2], temp[3], temp[6]);
+      path.addPoint(temp[0], Float.parseFloat(temp[2]), Float.parseFloat(temp[3]), Float.parseFloat(temp[6]));
     }
     
     return path;

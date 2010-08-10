@@ -1,11 +1,11 @@
 class BalloonPoint
 {
   String time;
-  String latitude;
-  String longitude;
-  String altitude;
+  float latitude;
+  float longitude;
+  float altitude;
     
-  BalloonPoint(String newTime, String newLatitude, String newLongitude, String newAltitude)
+  BalloonPoint(String newTime, float newLatitude, float newLongitude, float newAltitude)
   {
     time = newTime;
     latitude = newLatitude;
