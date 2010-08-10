@@ -15,8 +15,8 @@ void draw()
     BalloonPoint p = (BalloonPoint) path.points.get(i);
     float longitude = abs(p.longitude);
     float latitude = abs(p.latitude);
-    float x = map(latitude, 40.5, 41.5, 0, 640);
-    float y = map(longitude, 81, 82, 0, 480);
+    float x = map(latitude, abs(path.minLatitude), abs(path.maxLatitude), 0, width);
+    float y = map(longitude, abs(path.minLongitude), abs(path.maxLongitude), 0, height);
     point(x, y);
   }
 }
