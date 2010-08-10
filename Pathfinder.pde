@@ -9,6 +9,9 @@ boolean drawn = false;
 void setup()
 {
   size(640, 480, OPENGL);
+  noStroke();
+  fill(204);
+  
   builder = new PathBuilder();
   renderer = new PathRenderer(width, height);
   path = builder.newPathFromCsv("balloon2-path-data.csv");
@@ -16,6 +19,8 @@ void setup()
 
 void draw()
 {
+  background(0);
+  lights();
   renderer.render(path);
 }
 
