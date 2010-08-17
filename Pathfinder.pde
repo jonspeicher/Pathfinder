@@ -19,10 +19,6 @@ void draw()
   background(255);
   fill(204);
   lights();
-
-  rotateX(0.5);
-  rotateY(0.1);
-  rotateZ(0.1);
   
   renderer.render(path);
 }
