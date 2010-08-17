@@ -1,32 +1,32 @@
-// TBD: This needs to be adjusted to account for negative GPS coordinates.
+// TBD: This won't work anywhere but the northwestern quadrant, and assumes the origin is in the upper left
 
 class CartesianPositionMapper
 {
-  int width, height, borderSize;
-  float minLatitude, maxLatitude, minLongitude, maxLongitude;
+  private int _width, _height, _borderSize;
+  private float _minLatitude, _maxLatitude, _minLongitude, _maxLongitude;
   
-  CartesianPositionMapper(int newWidth, int newHeight, int newBorderSize)
+  CartesianPositionMapper(int width, int height, int borderSize)
   {
-    width = newWidth;
-    height = newHeight;
-    borderSize = newBorderSize;
+    _width = width;
+    _height = height;
+    _borderSize = borderSize;
   }
   
-  void setBoundaries(float newMinLatitude, float newMaxLatitude, float newMinLongitude, float newMaxLongitude)
+  void setBoundaries(float minLatitude, float maxLatitude, float minLongitude, float maxLongitude)
   {
-    minLatitude = newMinLatitude;
-    maxLatitude = newMaxLatitude;
-    minLongitude = newMinLongitude;
-    maxLongitude = newMaxLongitude;
+    _minLatitude = minLatitude;
+    _maxLatitude = maxLatitude;
+    _minLongitude = minLongitude;
+    _maxLongitude = maxLongitude;
   }
   
   int getX(float longitude)
   {
-    return (int) map(abs(longitude), abs(minLongitude), abs(maxLongitude), borderSize, width - borderSize);
+    return (int) map(longitude, _minLongitude, _maxLongitude, _borderSize, _width - _borderSize);
   }
   
   int getY(float latitude)
   {
-    return (int) map(abs(latitude), abs(minLatitude), abs(maxLatitude), borderSize, height - borderSize);
+    return (int) map(latitude, _maxLatitude, _minLatitude, _borderSize, _height - _borderSize);
   }
 }
