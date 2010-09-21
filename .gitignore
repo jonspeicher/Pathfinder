@@ -1,0 +1,3 @@
+# Ignore the images used by this sketch, since they are large and otherwise available on Flickr.
+
+data/images/*
