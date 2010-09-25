@@ -3,10 +3,9 @@ class PathRenderer
   private CartesianPositionMapper _mapper;
   private int _boxSize, _altitudeScale;
   
-  PathRenderer(int width, int height, int border, int boxSize, int altitudeScale)
+  PathRenderer(CartesianPositionMapper mapper, int boxSize, int altitudeScale)
   {
-    // TBD: Eeep, this should be injected, I've forgotten everything I learned :)
-    _mapper = new CartesianPositionMapper(width, height, border);
+    _mapper = mapper;
     _boxSize = boxSize;
     _altitudeScale = altitudeScale;
   }
