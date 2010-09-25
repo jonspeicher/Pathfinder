@@ -5,6 +5,7 @@ class PathRenderer
   
   PathRenderer(int width, int height, int border, int boxSize, int altitudeScale)
   {
+    // TBD: Eeep, this should be injected, I've forgotten everything I learned :)
     _mapper = new CartesianPositionMapper(width, height, border);
     _boxSize = boxSize;
     _altitudeScale = altitudeScale;
