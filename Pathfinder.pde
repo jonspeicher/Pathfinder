@@ -1,6 +1,6 @@
 import processing.opengl.*;
 
-//ImageSet imageSet;
+ImageSet imageSet;
 //ImageSetRenderer imageSetRenderer;
 
 Path path;
@@ -10,7 +10,7 @@ void setup()
 {
   size(640, 480, OPENGL);
   
-  //imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
+  imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
   //imageSetRenderer = new ImageSetRenderer(width, height);
   
   path = new PathBuilder().newPathFromCsv("balloon2-path-data.csv");
