@@ -1,14 +1,20 @@
 import processing.opengl.*;
 
+//ImageSet imageSet;
+//ImageSetRenderer imageSetRenderer;
+
 Path path;
-PathRenderer renderer;
+PathRenderer pathRenderer;
 
 void setup()
 {
   size(640, 480, OPENGL);
   
-  renderer = new PathRenderer(new CartesianPositionMapper(width, height, 100), 5, 200);
+  //imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
+  //imageSetRenderer = new ImageSetRenderer(width, height);
+  
   path = new PathBuilder().newPathFromCsv("balloon2-path-data.csv");
+  pathRenderer = new PathRenderer(new CartesianPositionMapper(width, height, 100), 5, 200);
 }
 
 void draw()
@@ -18,6 +24,7 @@ void draw()
   fill(204);
   lights();
   
-  renderer.render(path);
+  //imageSetRenderer.render();
+  pathRenderer.render(path);
 }
 
