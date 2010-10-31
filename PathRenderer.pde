@@ -2,21 +2,23 @@ class PathRenderer
 {
   private CartesianPositionMapper _mapper;
   private int _boxSize, _altitudeScale;
+  private Path _path;
   
-  PathRenderer(CartesianPositionMapper mapper, int boxSize, int altitudeScale)
+  PathRenderer(CartesianPositionMapper mapper, int boxSize, int altitudeScale, Path path)
   {
     _mapper = mapper;
     _boxSize = boxSize;
     _altitudeScale = altitudeScale;
+    _path = path;
   }
   
-  void render(Path path)
+  void render()
   {
-    _mapper.setBoundaries(path.minLatitude, path.maxLatitude, path.minLongitude, path.maxLongitude);
+    _mapper.setBoundaries(_path.minLatitude, _path.maxLatitude, _path.minLongitude, _path.maxLongitude);
     
-    for (int i = 0; i < path.positions.size(); i++)
+    for (int i = 0; i < _path.positions.size(); i++)
     {
-      Position position = (Position) path.positions.get(i);
+      Position position = (Position) _path.positions.get(i);
       
       pushMatrix();
       translate(_mapper.getX(position.longitude), _mapper.getY(position.latitude), position.altitude / (_altitudeScale * 2));
