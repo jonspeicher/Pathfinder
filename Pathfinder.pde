@@ -39,12 +39,10 @@ void setup()
   size(800, 600, OPENGL);
   
   imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
-  imageCount = imageSet.images.size();
+  imageCount = imageSet.size();
   
-  Image temp = (Image) imageSet.images.get(0);
-  theImage = loadImage("images/" + temp.filename);
-  temp = (Image) imageSet.images.get(1);
-  nextImage = requestImage("images/" + temp.filename);
+  theImage = loadImage("images/" + imageSet.getImage(0).filename);
+  nextImage = requestImage("images/" + imageSet.getImage(1).filename);
   nextImageIndex = 2;
 }
 
@@ -61,8 +59,6 @@ void draw()
 void loadEmUp()
 {
   theImage = nextImage;
-  Image temp = (Image) imageSet.images.get(nextImageIndex);
-  nextImage = requestImage("images/" + temp.filename);
+  nextImage = requestImage("images/" + imageSet.getImage(nextImageIndex).filename);
   nextImageIndex = (nextImageIndex + 1) % imageCount;
-  println(nextImageIndex);
 }
