@@ -1,11 +1,11 @@
 class ImageSetRenderer
 { 
-  String _path;
-  ImageSet _imageSet;
-  int _x, _y, _width, _height;
+  private String _path;
+  private ImageSet _imageSet;
+  private int _x, _y, _width, _height;
   
-  PImage _currentImage, _nextImage;
-  int _imageCount, _nextImageIndex;
+  private PImage _currentImage, _nextImage;
+  private int _imageCount, _nextImageIndex;
   
   ImageSetRenderer(int x, int y, int width, int height, ImageSet imageSet, String path)
   {
