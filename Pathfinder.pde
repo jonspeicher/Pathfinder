@@ -29,36 +29,14 @@ void draw()
 }
 */
 
-PImage theImage;
-PImage nextImage;
-int nextImageIndex;
-int imageCount;
-
 void setup()
 {
   size(800, 600, OPENGL);
-  
   imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
-  imageCount = imageSet.size();
-  
-  theImage = loadImage("images/" + imageSet.getImage(0).filename);
-  nextImage = requestImage("images/" + imageSet.getImage(1).filename);
-  nextImageIndex = 2;
+  imageSetRenderer = new ImageSetRenderer(0, 0, width, height, imageSet, "images");
 }
 
 void draw()
 {
-  image(theImage, 0, 0, width, height);
-  
-  if (nextImage.width != 0)
-  {
-    loadEmUp();
-  }
-}
-
-void loadEmUp()
-{
-  theImage = nextImage;
-  nextImage = requestImage("images/" + imageSet.getImage(nextImageIndex).filename);
-  nextImageIndex = (nextImageIndex + 1) % imageCount;
+  imageSetRenderer.renderNext();
 }
