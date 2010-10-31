@@ -17,11 +17,7 @@ void setup()
 
 void draw()
 {
-  noStroke();
   background(255);
-  fill(204);
-  lights();
-  
   imageSetRenderer.renderNext();
   pathRenderer.render();
 }

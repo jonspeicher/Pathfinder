@@ -14,6 +14,10 @@ class PathRenderer
   
   void render()
   {
+    noStroke();
+    fill(204);
+    lights();
+    
     _mapper.setBoundaries(_path.minLatitude, _path.maxLatitude, _path.minLongitude, _path.maxLongitude);
     
     for (int i = 0; i < _path.positions.size(); i++)
