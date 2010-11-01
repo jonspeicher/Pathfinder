@@ -18,6 +18,7 @@ class PathRenderer
   {
     noStroke();
     lights();
+    fill(204);
     
     _mapper.setBoundaries(_path.minLatitude, _path.maxLatitude, _path.minLongitude, _path.maxLongitude);
     
@@ -28,10 +29,6 @@ class PathRenderer
       if (position.timestamp.before(currentTimestamp))
       {
         fill(255, 0, 0);
-      }
-      else
-      {
-        fill(204);
       }
       
       pushMatrix();
