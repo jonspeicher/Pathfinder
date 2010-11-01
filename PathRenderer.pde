@@ -14,10 +14,9 @@ class PathRenderer
     _path = path;
   }
   
-  void render(Date timestamp)
+  void render(Date currentTimestamp)
   {
     noStroke();
-    fill(204);
     lights();
     
     _mapper.setBoundaries(_path.minLatitude, _path.maxLatitude, _path.minLongitude, _path.maxLongitude);
@@ -25,6 +24,15 @@ class PathRenderer
     for (int i = 0; i < _path.positions.size(); i++)
     {
       Position position = (Position) _path.positions.get(i);
+  
+      if (position.timestamp.before(currentTimestamp))
+      {
+        fill(255, 0, 0);
+      }
+      else
+      {
+        fill(204);
+      }
       
       pushMatrix();
       translate(_mapper.getX(position.longitude), _mapper.getY(position.latitude), position.altitude / (_altitudeScale * 2));
