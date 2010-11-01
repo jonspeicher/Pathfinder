@@ -1,3 +1,5 @@
+import java.util.Date;
+
 class PathRenderer
 {
   private CartesianPositionMapper _mapper;
@@ -12,7 +14,7 @@ class PathRenderer
     _path = path;
   }
   
-  void render()
+  void render(Date timestamp)
   {
     noStroke();
     fill(204);

@@ -30,4 +30,9 @@ class ImageSetRenderer
     _nextImage = requestImage(_path + "/" + _imageSet.getImage(_nextImageIndex).filename);
     _nextImageIndex = (_nextImageIndex + 1) % _imageCount;
   }
+  
+  Image getCurrentImage()
+  {
+    return _imageSet.getImage(_nextImageIndex - 1);
+  }
 }

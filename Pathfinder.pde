@@ -22,6 +22,6 @@ void draw()
 {
   background(255);
   imageSetRenderer.renderNext();
-  pathRenderer.render();
+  pathRenderer.render(imageSetRenderer.getCurrentImage().timestamp);
   delay(50);
 }
