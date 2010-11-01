@@ -1,5 +1,3 @@
-// http://processing.org/discourse/yabb2/YaBB.pl?num=1245180364
-
 import java.util.Date;
 import java.text.SimpleDateFormat;
 

@@ -1,4 +1,4 @@
-// TBD: This won't work anywhere but the northwestern quadrant, and assumes the origin is in the upper left
+// TBD: This won't work anywhere but the northwestern quadrant
 
 class CartesianPositionMapper
 {
