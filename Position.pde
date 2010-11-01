@@ -21,7 +21,6 @@ class Position
     try
     {
       timestamp = dateFormat.parse(newTimestamp);
-      println(timestamp.toString());
     }
     catch (ParseException e)
     {
