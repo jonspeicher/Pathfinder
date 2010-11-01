@@ -1,15 +1,31 @@
+// http://processing.org/discourse/yabb2/YaBB.pl?num=1245180364
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 class Position
 {
-  String time;
+  Date timestamp;
   float latitude;
   float longitude;
   float altitude;
     
-  Position(String newTime, float newLatitude, float newLongitude, float newAltitude)
+  Position(String newTimestamp, float newLatitude, float newLongitude, float newAltitude)
   {
-    time = newTime;
     latitude = newLatitude;
     longitude = newLongitude;
     altitude = newAltitude;
+    
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
+
+    try
+    {
+      timestamp = dateFormat.parse(newTimestamp);
+      println(timestamp.toString());
+    }
+    catch (ParseException e)
+    {
+      println(e);
+    }
   }
 }
