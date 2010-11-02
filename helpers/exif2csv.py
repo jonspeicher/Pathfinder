@@ -42,10 +42,8 @@ class ExifBuilder(object):
         for filename in glob.glob(self.__filespec):
             exif.append((self.__reader.get_tag(filename, tag), filename))
         return exif
-        
-reader = ExifReader()
-builder = ExifBuilder('*.jpg', reader)
+
+builder = ExifBuilder('*.jpg', ExifReader())
 writer = CsvWriter()
 
-exif = builder.build(sys.argv[1])
-writer.append(exif)
+writer.append(builder.build(sys.argv[1]))
