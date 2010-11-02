@@ -26,9 +26,14 @@ class PathRenderer
     {
       Position position = (Position) _path.positions.get(i);
   
+      // TBD This code is ugly
       if (position.timestamp.before(currentTimestamp))
       {
         fill(255, 0, 0);
+      }
+      else
+      {
+        fill(204);
       }
       
       pushMatrix();
