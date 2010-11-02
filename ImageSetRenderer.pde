@@ -33,6 +33,7 @@ class ImageSetRenderer
   
   Image getCurrentImage()
   {
+    // TBD: This will go to -1 when _nextImageIndex wraps to zero
     return _imageSet.getImage(_nextImageIndex - 1);
   }
 }
