@@ -1,14 +1,12 @@
-exif2csv
-========
+Pathfinder
+==========
 
-exif2csv creates a CSV file containing EXIF data from JPG image files in a directory.
+TBD
 
 Description
 ===========
 
-This quick and dirty script creates a comma-separated value file with rows for each JPG image file
-in the current working directory.  The row contains the image file name as well as the value of one
-EXIF tag extracted from that image file.
+TBD
 
 Requirements
 ============
@@ -21,33 +19,24 @@ Installation
 ============
 
 First, install the required dependencies.  EXIF.py must be downloaded and placed into your Python
-module search path.  
+module search path.
 
 exif2csv may be placed anywhere you wish.
 
 Usage
 =====
 
-* Change to the directory containing the JPG files you wish to catalog
-* Type:
-  * `exif2csv.py <csv> <tag>`
-* Where:
-  * `csv` is the name of the CSV file to write
-  * `tag` is the name of the EXIF tag to read from each JPG file in the directory
+TBD
 
 Tests
 =====
 
 No unit tests are provided with the source distribution at this time.
 
-                        Uninstallation
-                        ==============
+Uninstallation
+==============
 
-                        Should you wish to remove snore, simply:
-
-                        * Change to your Python installation's `site-packages` directory
-                        * Remove the directory `snore-X.X-pyY.Y.egg` and its contents from the `site-packages` directory
-                        * Remove the line referring to snore from the `easy-install.pth` file found in the `site-packages` directory
+TBD
 
 Author
 ======
