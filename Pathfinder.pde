@@ -1,3 +1,10 @@
+// -------------------------------------------------------------------------------------------------
+// Pathfinder - Displays synchronized path and images taken along that path in accelerated time
+//
+// Copyright (c) 2010 Jonathan Speicher (jon.speicher@gmail.com)
+// Licensed under the MIT license: http://creativecommons.org/licenses/MIT
+// -------------------------------------------------------------------------------------------------
+
 import processing.opengl.*;
 
 final int IMAGE_WIDTH = 800, IMAGE_HEIGHT = 600;
