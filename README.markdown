@@ -14,7 +14,7 @@ balloon's flight path is recorded.
 This software package, written in Processing with some supporting Python scripts, attempts to
 visualize the balloon's flight by presenting the recorded images together with a rendering of the
 balloon's flight path in synchronized, accelerated time.
-```
+
 Previous balloon launch photos are available at the
 [HackPittsburgh Flickr Pool](http://www.flickr.com/groups/hackpgh). My favorites, plus my ground
 photos, are at [my Flickr page](http://www.flickr.com/photos/jonspeicher).
