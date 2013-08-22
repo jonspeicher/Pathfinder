@@ -23,7 +23,7 @@ class Image
     {
       timestamp = dateFormat.parse(newTimestamp);
     }
-    catch (ParseException e)
+    catch (Exception e)
     {
       println(e);
     }
