@@ -28,7 +28,8 @@ void setup()
 void draw()
 {
   background(255);
-  imageSetRenderer.renderNext();
+  imageSetRenderer.renderCurrentImage();
   pathRenderer.render(imageSetRenderer.getCurrentImage().timestamp);
+  imageSetRenderer.nextImage();
   delay(50);
 }

@@ -12,7 +12,7 @@ class ImageSetRenderer
   private int _x, _y, _width, _height;
 
   private PImage _currentImage, _nextImage;
-  private int _imageCount, _nextImageIndex;
+  private int _imageCount, _currentImageIndex;
 
   ImageSetRenderer(int x, int y, int width, int height, ImageSet imageSet, String path)
   {
@@ -24,26 +24,28 @@ class ImageSetRenderer
     _path = path;
 
     _imageCount = _imageSet.size();
+    _currentImageIndex = 0;
     _currentImage = loadImage(_path + "/" + _imageSet.getImage(0).filename);
     _nextImage = requestImage(_path + "/" + _imageSet.getImage(1).filename);
-    _nextImageIndex = 2;
   }
 
-  void renderNext()
+  void renderCurrentImage()
   {
     if (_currentImage != null)
     {
       image(_currentImage, _x, _y, _width, _height);
     }
-
+  }
+  
+  void nextImage()
+  {
     _currentImage = _nextImage;
-    _nextImage = requestImage(_path + "/" + _imageSet.getImage(_nextImageIndex).filename);
-    _nextImageIndex = (_nextImageIndex + 1) % _imageCount;
+    _currentImageIndex = (_currentImageIndex + 1) % _imageCount;
+    _nextImage = requestImage(_path + "/" + _imageSet.getImage(_currentImageIndex).filename);
   }
 
   Image getCurrentImage()
   {
-    // TBD: This will go to -1 when _nextImageIndex wraps to zero
-    return _imageSet.getImage(_nextImageIndex - 1);
+    return _imageSet.getImage(_currentImageIndex);
   }
 }
