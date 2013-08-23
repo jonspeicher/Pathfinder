@@ -18,7 +18,7 @@ PathRenderer pathRenderer;
 
 void setup()
 {
-  size(IMAGE_WIDTH + PATH_WIDTH, max(IMAGE_HEIGHT, PATH_HEIGHT), OPENGL);
+  size(IMAGE_WIDTH + PATH_WIDTH, max(IMAGE_HEIGHT, PATH_HEIGHT), P3D);
   imageSet = new ImageSetBuilder().newImageSetFromCsv("balloon2-image-data.csv");
   imageSetRenderer = new ImageSetRenderer(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, imageSet, "images");
   path = new PathBuilder().newPathFromCsv("balloon2-path-data.csv");
