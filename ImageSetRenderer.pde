@@ -31,7 +31,10 @@ class ImageSetRenderer
 
   void renderNext()
   {
-    image(_currentImage, _x, _y, _width, _height);
+    if (_currentImage != null)
+    {
+      image(_currentImage, _x, _y, _width, _height);
+    }
 
     _currentImage = _nextImage;
     _nextImage = requestImage(_path + "/" + _imageSet.getImage(_nextImageIndex).filename);
