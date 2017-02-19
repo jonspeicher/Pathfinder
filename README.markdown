@@ -70,7 +70,7 @@ been post-processed and checked in to this git repository. So, as written, this
 particular program will only work for visualizing LEAD Balloon A2's path.
 
 To obtain A2's images, they may be downloaded from [my Dropbox
-archive](http://dl.dropbox.com/u/1031159/balloon2-images.zip).
+archive](https://www.dropbox.com/s/tv5e700dmr6wmuh/balloon2-images.zip?dl=1).
 
 Place the images into the `data/images` subdirectory. The balloon's path data
 is already present in the `data` directory, as is a catalog file containing the
